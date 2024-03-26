@@ -30,6 +30,7 @@ const styles = StyleSheet.create({
   listContainerStyle: {
     padding: padding,
   },
+  loadingStyle: {margin: 20},
 });
 
 export default styles;
