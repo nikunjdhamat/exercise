@@ -1,20 +1,25 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {FlatList, Text, View} from 'react-native';
-import {SafeAreaView} from 'react-native-safe-area-context';
 import styles from './styles';
 import FastImage from 'react-native-fast-image';
 import {Movie} from '../../types';
 import {POSTER_BASE_URL} from '../constants';
 import {useGetMovieListQuery} from '../../services/movieApi';
 import {ActivityIndicator} from 'react-native-paper';
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
 const HomeScreen: React.FunctionComponent = () => {
-  const {data, isLoading, isFetching} = useGetMovieListQuery(2);
+  const [page, setPage] = useState(1);
+  const inset = useSafeAreaInsets();
+  const {data, isLoading, isFetching} = useGetMovieListQuery(page, {
+    refetchOnMountOrArgChange: true,
+  });
 
-  if (isLoading) {
-    return <ActivityIndicator size={'large'} style={styles.safeArea} />;
-  }
-
+  const fetchNextPage = () => {
+    if (data?.page && !isFetching) {
+      setPage(data.page + 1);
+    }
+  };
   const renderItem = ({item}: {item: Movie}) => {
     return (
       <View style={styles.listItemContainer}>
@@ -31,21 +36,29 @@ const HomeScreen: React.FunctionComponent = () => {
       </View>
     );
   };
+
+  if (isLoading) {
+    return <ActivityIndicator size={'large'} style={styles.safeArea} />;
+  }
+
   return (
-    <SafeAreaView style={styles.safeArea}>
-      <FlatList
-        data={data?.results}
-        renderItem={renderItem}
-        numColumns={2}
-        keyExtractor={(item, index) => index.toString()}
-        contentContainerStyle={styles.listContainerStyle}
-        ListFooterComponent={
-          isFetching ? (
-            <ActivityIndicator style={styles.loadingStyle} />
-          ) : undefined
-        }
-      />
-    </SafeAreaView>
+    <FlatList
+      data={data?.results}
+      renderItem={renderItem}
+      numColumns={2}
+      keyExtractor={(item, index) => index.toString()}
+      contentContainerStyle={[
+        styles.listContainerStyle,
+        {paddingTop: inset.top, paddingBottom: inset.bottom},
+      ]}
+      onEndReached={fetchNextPage}
+      onEndReachedThreshold={0.5}
+      ListFooterComponent={
+        isFetching ? (
+          <ActivityIndicator style={styles.loadingStyle} />
+        ) : undefined
+      }
+    />
   );
 };
 

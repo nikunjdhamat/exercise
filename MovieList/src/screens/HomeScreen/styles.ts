@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     color: 'grey',
   },
   listContainerStyle: {
-    padding: padding,
+    paddingHorizontal: padding,
   },
   loadingStyle: {margin: 20},
 });
