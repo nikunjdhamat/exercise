@@ -10,6 +10,7 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
 # using npm
 npm install
 
+# pod install
 npm run pod-install
 
 # OR using Yarn
@@ -35,7 +36,6 @@ yarn android
 
 ```bash
 # using npm
-npm run pod-install of you are
 npm run ios
 
 # OR using Yarn
