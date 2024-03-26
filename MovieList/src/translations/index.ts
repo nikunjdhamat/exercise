@@ -1,5 +1,6 @@
 import i18n from 'i18next';
 import {I18nManager, NativeModules, Platform} from 'react-native';
+import RNRestart from 'react-native-restart';
 import {AvailableLanguages, Resources, TranslationType} from './types';
 import englishTranslations from './en';
 import arabicTranslation from './ar';
@@ -39,9 +40,15 @@ i18n.use(initReactI18next).init(
     if (isRTLLanguage(deviceLanguage) && !I18nManager.isRTL) {
       I18nManager.allowRTL(true);
       I18nManager.forceRTL(true);
+      setTimeout(() => {
+        RNRestart.Restart();
+      }, 500);
     } else if (!isRTLLanguage(deviceLanguage) && I18nManager.isRTL) {
       I18nManager.allowRTL(false);
       I18nManager.forceRTL(false);
+      setTimeout(() => {
+        RNRestart.Restart();
+      }, 500);
     }
   },
 );
