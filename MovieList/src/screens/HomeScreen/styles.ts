@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
   },
   listItemContainer: {
     width: width,
-    height: width,
+    height: width + width * 0.45,
     padding: padding,
   },
   posterStyle: {
@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     color: 'grey',
   },
   listContainerStyle: {
-    paddingHorizontal: padding,
+    padding: padding,
   },
 });
 
