@@ -2,11 +2,11 @@ import {TranslationType} from './types';
 
 const arabicTranslation: TranslationType = {
   login: {
-    emailLable: 'Email',
-    emailPlaceholder: 'Plase enter your email',
-    passwordLable: 'Password',
-    passwordPlaceholder: 'Plase enter your password',
-    buttonTitle: 'Login',
+    emailLable: 'بريد إلكتروني',
+    emailPlaceholder: 'الرجاء إدخال البريد الإلكتروني الخاص بك',
+    passwordLable: 'كلمة المرور',
+    passwordPlaceholder: 'الرجاء إدخال كلمة المرور الخاصة بك',
+    buttonTitle: 'تسجيل الدخول',
   },
 };
 
