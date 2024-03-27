@@ -7,6 +7,7 @@
 4. for localisation support react-i18next used
 5. app uses redux and redux toolkit for application state management
 6. app uses react-navigation/native-stack for navigation
+7. graphQl demo repo url https://github.com/nikunjdhamat/exercise/tree/main/GraphQlDemo
 
 ## Follow the below steps to run the app
 
