@@ -20,7 +20,10 @@ export const movieApi = createApi({
       },
       merge: (currentCache, newItems) => {
         currentCache.page = newItems.page;
-        currentCache.results = [...currentCache.results, ...newItems.results];
+        const reducedArray = newItems.results.map(movie => {
+          return {title: movie.title, poster_path: movie.poster_path};
+        });
+        currentCache.results.push(...reducedArray);
       },
     }),
   }),
