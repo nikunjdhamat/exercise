@@ -8,6 +8,12 @@ const arabicTranslation: TranslationType = {
     passwordPlaceholder: 'الرجاء إدخال كلمة المرور الخاصة بك',
     buttonTitle: 'تسجيل الدخول',
   },
+  dragon: {
+    name: 'اسم',
+    firstFlight: 'الرحلة الأولى',
+    diameter: 'قطر الدائرة',
+    payloadMass: 'كتلة الحمولة',
+  },
 };
 
 export default arabicTranslation;

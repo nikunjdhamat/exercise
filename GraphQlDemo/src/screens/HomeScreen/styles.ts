@@ -1,36 +1,41 @@
-import {Dimensions, StyleSheet} from 'react-native';
-const numOfColumn = 2;
+import {StyleSheet} from 'react-native';
 const padding = 10;
-const width = Dimensions.get('screen').width / numOfColumn - padding;
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
   },
   listItemContainer: {
-    width: width,
-    height: width + width * 0.45,
-    padding: padding,
-  },
-  posterStyle: {
-    backgroundColor: 'white',
     width: '100%',
-    height: '100%',
+    padding: padding,
+    backgroundColor: 'white',
+    marginBottom: 10,
     borderRadius: 10,
-    justifyContent: 'flex-end',
-    borderColor: '#00000050',
+    borderColor: '#00000040',
     borderWidth: 1,
   },
-  titleContainer: {
-    backgroundColor: 'white',
-    padding: 5,
-    fontWeight: '500',
+  itemRowContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  itemAlignStart: {
+    alignItems: 'flex-start',
+  },
+  itemAlignEnd: {
+    alignItems: 'flex-end',
+  },
+  titleTextStyle: {
     fontSize: 14,
     color: 'grey',
   },
+  valueTextStyle: {
+    fontSize: 16,
+    color: 'black',
+    fontWeight: '400',
+  },
+  topMargin: {marginTop: 20},
   listContainerStyle: {
     paddingHorizontal: padding,
   },
-  loadingStyle: {margin: 20},
 });
 
 export default styles;

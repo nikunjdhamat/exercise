@@ -6,5 +6,11 @@ const englishTranslations = {
     passwordPlaceholder: 'Plase enter your password',
     buttonTitle: 'Login',
   },
+  dragon: {
+    name: 'Name',
+    firstFlight: 'First flight',
+    diameter: 'Diameter',
+    payloadMass: 'Payload Mass',
+  },
 };
 export default englishTranslations;
