@@ -41,3 +41,7 @@ yarn ios
 ## Login
 
 ![Login Screen](./screenshots/login.png?raw=true 'Login')
+
+## Movie List
+
+![Movie List Screen](./screenshots/movie_list.png?raw=true 'Movie List')
