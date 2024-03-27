@@ -40,4 +40,4 @@ yarn ios
 
 ## Login
 
-![Alt text](/screenshots/login.png?raw=true 'Login')
+![Login Screen](./screenshots/login.png?raw=true 'Login')
