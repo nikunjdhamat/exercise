@@ -1,3 +1,13 @@
+
+## Application details
+
+1. Application is fetching the movies from API https://developer.themoviedb.org/reference/movie-popular-list
+2. app uses redux/toolkit/query for api integration
+3. app supports en and arabic language.
+4. for localisation support react-i18next used
+5. app uses redux and redux toolkit for application state management
+6. app uses react-navigation/native-stack for navigation
+
 ## Follow the below steps to run the app
 
 ## Step 1: Install the node modules
@@ -45,3 +55,8 @@ yarn ios
 ## Movie List
 
 <img src="./screenshots/movie_list.png" width="200">
+
+## To Dos
+
+1. unit test
+2. code coverage
