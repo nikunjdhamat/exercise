@@ -1,12 +1,11 @@
 import React, {useState} from 'react';
-import {FlatList, Text, View} from 'react-native';
+import {FlatList} from 'react-native';
 import styles from './styles';
-import FastImage from 'react-native-fast-image';
 import {Movie} from '../../types';
-import {POSTER_BASE_URL} from '../constants';
 import {useGetMovieListQuery} from '../../services/movieApi';
 import {ActivityIndicator} from 'react-native-paper';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
+import MovieComponent from './MovieComponent';
 
 const HomeScreen: React.FunctionComponent = () => {
   const [page, setPage] = useState(1);
@@ -21,20 +20,7 @@ const HomeScreen: React.FunctionComponent = () => {
     }
   };
   const renderItem = ({item}: {item: Movie}) => {
-    return (
-      <View style={styles.listItemContainer}>
-        <FastImage
-          style={styles.posterStyle}
-          source={{
-            uri: `${POSTER_BASE_URL}${item.poster_path}`,
-          }}
-          resizeMode={FastImage.resizeMode.cover}>
-          <Text style={styles.titleContainer} numberOfLines={2}>
-            {item.title}
-          </Text>
-        </FastImage>
-      </View>
-    );
+    return <MovieComponent item={item} />;
   };
 
   if (isLoading) {
