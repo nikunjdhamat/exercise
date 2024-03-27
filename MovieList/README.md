@@ -40,8 +40,8 @@ yarn ios
 
 ## Login
 
-![Login Screen](./screenshots/login.png?raw=true 'Login')
+<img src="./screenshots/login.png" width="200">
 
 ## Movie List
 
-![Movie List Screen](./screenshots/movie_list.png?raw=true 'Movie List')
+<img src="./screenshots/movie_list.png" width="200">
