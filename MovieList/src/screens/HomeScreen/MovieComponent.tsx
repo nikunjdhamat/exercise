@@ -5,7 +5,10 @@ import FastImage from 'react-native-fast-image';
 import {Movie} from '../../types';
 import {POSTER_BASE_URL} from '../constants';
 
-const MovieComponent = ({item}: {item: Movie}) => {
+interface MovieComponentPropType {
+  item: Movie;
+}
+const MovieComponent = ({item}: MovieComponentPropType) => {
   return (
     <View style={styles.listItemContainer}>
       <FastImage
