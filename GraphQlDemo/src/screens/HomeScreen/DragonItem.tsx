@@ -1,7 +1,6 @@
-import React from 'react';
+import React, {memo} from 'react';
 import {Text, View} from 'react-native';
 import styles from './styles';
-import {memo} from 'react';
 import {Dragon} from '../../types';
 import {useTranslation} from 'react-i18next';
 
