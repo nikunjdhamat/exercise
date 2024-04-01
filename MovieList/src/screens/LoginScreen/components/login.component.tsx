@@ -1,6 +1,6 @@
 import React from 'react';
 import {ScrollView} from 'react-native';
-import styles from './styles';
+import styles from '../styles';
 import {useTranslation} from 'react-i18next';
 import {Button, TextInput} from 'react-native-paper';
 

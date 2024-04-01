@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
-import {useGetMovieListQuery} from '../../services/movieApi';
-import HomeComponent from './HomeComponent';
+import {useGetMovieListQuery} from '../../../services/movieApi';
+import MovieListComponent from '../components/movieList.component';
 
-const HomeScreen: React.FunctionComponent = () => {
+const MovieListContainer = () => {
   const [page, setPage] = useState(1);
   const {data, isLoading, isFetching} = useGetMovieListQuery(page, {
     refetchOnMountOrArgChange: true,
@@ -14,7 +14,7 @@ const HomeScreen: React.FunctionComponent = () => {
     }
   };
   return (
-    <HomeComponent
+    <MovieListComponent
       isFetching={isFetching}
       isLoading={isLoading}
       movies={data?.results}
@@ -23,4 +23,4 @@ const HomeScreen: React.FunctionComponent = () => {
   );
 };
 
-export default HomeScreen;
+export default MovieListContainer;

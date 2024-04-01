@@ -1,23 +1,23 @@
 import React from 'react';
 import {FlatList} from 'react-native';
-import styles from './styles';
-import {Movie} from '../../types';
+import styles from '../styles';
+import {Movie} from '../../../types';
 import {ActivityIndicator} from 'react-native-paper';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
-import MovieComponent from './MovieComponent';
+import MovieComponent from './movie.component';
 
-interface HomeComponentPropType {
+interface MovieListComponentPropType {
   isLoading: boolean;
   isFetching: boolean;
   movies?: Movie[];
   onLoadMore: () => void;
 }
-const HomeComponent = ({
+const MovieListComponent = ({
   isFetching,
   isLoading,
   movies,
   onLoadMore,
-}: HomeComponentPropType) => {
+}: MovieListComponentPropType) => {
   const inset = useSafeAreaInsets();
   const renderItem = ({item}: {item: Movie}) => {
     return <MovieComponent item={item} />;
@@ -48,4 +48,4 @@ const HomeComponent = ({
   );
 };
 
-export default HomeComponent;
+export default MovieListComponent;

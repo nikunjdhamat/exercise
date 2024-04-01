@@ -1,9 +1,9 @@
 import React, {memo} from 'react';
 import {Text, View} from 'react-native';
-import styles from './styles';
+import styles from '../styles';
 import FastImage from 'react-native-fast-image';
-import {Movie} from '../../types';
-import {POSTER_BASE_URL} from '../constants';
+import {Movie} from '../../../types';
+import {POSTER_BASE_URL} from '../../constants';
 
 interface MovieComponentPropType {
   item: Movie;

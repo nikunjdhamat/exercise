@@ -1,13 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import {CommonActions, useNavigation} from '@react-navigation/native';
-import {ROUTE_HOME} from '../../navigation/routes';
+import {ROUTE_HOME} from '../../../navigation/routes';
 import {useDispatch, useSelector} from 'react-redux';
-import {setEmail, setPassword} from '../../redux/reducers/loginSlice';
-import {STORAGE_KEYS, setStorage} from '../../utils/storage';
-import LoginComponent from './LoginComponent';
-import {isEmailValid, isPasswordValid} from '../../utils/validationUtils';
+import {setEmail, setPassword} from '../../../redux/reducers/loginSlice';
+import {STORAGE_KEYS, setStorage} from '../../../utils/storage';
+import LoginComponent from '../components/login.component';
+import {isEmailValid, isPasswordValid} from '../../../utils/validationUtils';
 
-const LoginScreen: React.FunctionComponent = () => {
+const LoginContainer = () => {
   const navigation = useNavigation();
   const dispatch = useDispatch();
   const [loginDisabled, setLoginDisabled] = useState(true);
@@ -51,4 +51,4 @@ const LoginScreen: React.FunctionComponent = () => {
   );
 };
 
-export default LoginScreen;
+export default LoginContainer;
