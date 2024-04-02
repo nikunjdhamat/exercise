@@ -3,7 +3,7 @@ import {CommonActions, useNavigation} from '@react-navigation/native';
 import {ROUTE_HOME} from '../../../navigation/routes';
 import {useDispatch, useSelector} from 'react-redux';
 import {setEmail, setPassword} from '../../../redux/reducers/loginSlice';
-import {STORAGE_KEYS, setStorage} from '../../../utils/storage';
+import {STORAGE_KEYS, setItem} from '../../../utils/storage';
 import LoginComponent from '../components/login.component';
 import {isEmailValid, isPasswordValid} from '../../../utils/validationUtils';
 
@@ -22,7 +22,7 @@ const LoginContainer = () => {
   }, [email, password]);
 
   const doLogin = () => {
-    setStorage(STORAGE_KEYS.IS_LOGGED_IN, 'true');
+    setItem(STORAGE_KEYS.IS_LOGGED_IN, 'true');
     navigation.dispatch(
       CommonActions.reset({
         index: 0,

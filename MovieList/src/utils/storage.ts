@@ -3,13 +3,18 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 export const STORAGE_KEYS = {
   IS_LOGGED_IN: 'IS_LOGGED_IN',
 };
-export const setStorage = async (key: string, value: string) => {
+export const setItem = async (key: string, value: string) => {
   try {
     await AsyncStorage.setItem(key, value);
-  } catch (e) {
-    // saving error
+    return true;
+  } catch (_) {
+    return false;
   }
 };
-export const getStorage = async (key: string) => {
-  return await AsyncStorage.getItem(key);
+export const getItem = async (key: string) => {
+  try {
+    return await AsyncStorage.getItem(key);
+  } catch (_) {
+    return undefined;
+  }
 };
