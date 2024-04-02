@@ -3,6 +3,7 @@ import {ScrollView} from 'react-native';
 import styles from '../styles';
 import {useTranslation} from 'react-i18next';
 import {Button, TextInput} from 'react-native-paper';
+import {loginTestIds} from '../../../testIds';
 
 interface LoginComponentPropType {
   email: string;
@@ -25,6 +26,7 @@ const LoginComponent = ({
     <ScrollView contentContainerStyle={styles.container} bounces={false}>
       <>
         <TextInput
+          testID={loginTestIds.email}
           label={t('login.emailLable')}
           placeholder={t('login.emailPlaceholder')}
           mode="outlined"
@@ -35,6 +37,7 @@ const LoginComponent = ({
           style={styles.textInputStyle}
         />
         <TextInput
+          testID={loginTestIds.password}
           label={t('login.passwordLable')}
           placeholder={t('login.passwordPlaceholder')}
           mode="outlined"
@@ -45,6 +48,7 @@ const LoginComponent = ({
           style={styles.textInputStyle}
         />
         <Button
+          testID={loginTestIds.loginButton}
           mode="contained"
           onPress={onLogin}
           style={styles.buttonStyle}
