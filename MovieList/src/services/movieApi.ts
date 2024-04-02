@@ -1,5 +1,5 @@
 import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react';
-import {MOVIE_DB_BASE_URL, authToken} from '../screens/constants';
+import {MOVIE_DB_BASE_URL, authToken} from '../constants';
 import {i18n} from '../translations';
 import {MovieListResponseType} from '../types';
 
