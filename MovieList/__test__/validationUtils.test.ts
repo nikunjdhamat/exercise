@@ -2,7 +2,7 @@ import 'react-native';
 
 // Note: import explicitly to use the types shipped with jest.
 import {test, describe, expect} from '@jest/globals';
-import {isEmailValid, isPasswordValid} from './validationUtils';
+import {isEmailValid, isPasswordValid} from '../src/utils/validationUtils';
 
 describe('Validation Utils', () => {
   test('should not be valid email', () => {

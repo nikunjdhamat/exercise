@@ -2,7 +2,7 @@ import 'react-native';
 
 // Note: import explicitly to use the types shipped with jest.
 import {it, describe, expect, jest} from '@jest/globals';
-import {getItem, setItem} from './storage';
+import {getItem, setItem} from '../src/utils/storage';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const mockedSetItem = AsyncStorage.setItem as jest.Mock;
