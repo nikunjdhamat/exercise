@@ -34,20 +34,10 @@ jest.mock('react-redux', () => {
   };
 });
 
-jest.mock('@react-native-async-storage/async-storage', () => {
-  const items = {};
-  return {
-    setItem: jest.fn((item, value) => {
-      return new Promise((resolve, reject) => {
-        items[item] = value;
-        resolve(value);
-      });
-    }),
-    getItem: jest.fn(item => {
-      return items[item];
-    }),
-  };
-});
+jest.mock('@react-native-async-storage/async-storage', () => ({
+  setItem: jest.fn(),
+  getItem: jest.fn(),
+}));
 
 jest.mock('react-i18next', () => {
   return {
